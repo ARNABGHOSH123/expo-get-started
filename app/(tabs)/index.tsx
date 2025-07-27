@@ -18,7 +18,7 @@ export default function HomeScreen() {
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome Arnab!</ThemedText>
+        <ThemedText type="title">Welcome Arnab for CI/CD!</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
