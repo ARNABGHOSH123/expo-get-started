@@ -1,0 +1,24 @@
+name: Expo EAS Build (Android)
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  eas-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install EAS CLI
+        run: npm install -g eas-cli
+
+      - name: Log in to Expo
+        run: eas login --token ${{ secrets.EXPO_TOKEN }}
+
+      - name: Start EAS Build
+        run: eas build --platform android --non-interactive
